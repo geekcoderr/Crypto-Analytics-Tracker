@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@700&family=Ubuntu+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bebas+Neue&family=Exo+2:wght@800&family=Josefin+Sans:wght@700&family=Ubuntu+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Libre:wght@700&family=Ubuntu+Mono:wght@700&display=swap');
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+/* Custom CSS for styling */
+.container-fluid {
+    background: linear-gradient(135deg, #8b00cc, #b8520e, #dd1b8c);
+    padding: 20px;  
+}
+  
+.banner{
+    background: rgba(85, 21, 21, 0.45); /* Brown background with 50% opacity */
+}
+
+.custom-font{
+    font-size: 30px;
+    font-family: 'Averia Libre', sans-serif;
+    letter-spacing: -1px;
+    margin: 6px 6px 6px 6px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Adjust the width, height, position, and color for the mat-select and its options */
+
+.custom-mat-form-field {
+    width: 300px; /* Set the width as needed */
+  }
+  
+  .custom-mat-select {
+    width: 100%; /* Make the mat-select full width within the form field */
+    height: 30px; /* Set the desired height */
+    position:relative; /* Position property can be adjusted based on your layout needs */ 
+    color:rgb(255, 106, 0);
+  }
+  
+  .custom-mat-option {
+    background-color: #8b00cc;
+    color: #333; /* Text color for options */
+    font-size: 14px; /* Font size for options */
+
+  }
+  
+ .logo{
+  height: 45px;
+  margin: 10px 10px 10px 10px;
+ } 

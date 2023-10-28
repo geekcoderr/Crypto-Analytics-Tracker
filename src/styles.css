@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-repeat: no-repeat;
+    /* Prevents background image from repeating */
+    background-size: cover;
+    /* Scales the background image to cover the entire viewport */
+    background-attachment: fixed;
+    background-image: url('./assets/background.jpg');
+}
+
+
+/* Customize the scrollbar for webkit-based browsers (Chrome and Safari) */
+/* You can adjust the styles as needed */
+
+/* Track */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ff7300b6;
+    scroll-behavior: smooth;
+    /* Change the color to your preference */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ff0080;
+    /* Change the hover color */
+}
+
+/* Customize the scrollbar for Firefox */
+/* You can adjust the styles as needed */
+
+/* Track */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #ff7300b6 #7de5ff;
+    /* Change the colors to your preference */
+}

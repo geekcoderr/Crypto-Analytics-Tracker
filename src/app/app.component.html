@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <mat-toolbar style="border-radius: 10px;" class="banner">
+        <img src="../assets/cryptocurrency.png" alt="LOGO" class="logo">
+        <span class="text-warning h4 custom-font">Crypto Analytics Tracker</span>
+        <span class="example-spacer"></span>
+        <mat-form-field class="custom-mat-form-field">
+          <mat-select (valueChange)="sendCurrency($event)" class="text-capitalize" [(ngModel)]="selectedCurrency" class="custom-mat-select">
+            <mat-option [value]="'INR'" class="custom-mat-option bg-danger text-white">₹ INR(Indian Rupees)</mat-option>
+            <mat-option [value]="'USD'" class="custom-mat-option bg-success text-white">$ USD(United States Dollars)</mat-option>
+          </mat-select>
+        </mat-form-field>        
+      </mat-toolbar>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,83 @@
+<!-- head container -->
+<div class="banner">
+    <div class="container">
+        <div class="header">
+            <h2 class="headtitle">Crypto Analytics <span class="realtime"> Real-Time </span>Data</h2>
+            <h6 class="infotext">Track crypto currency data end-to-end with flexibility</h6>
+        </div>
+        <div class="sub-header">
+            <marquee class="marquee-tag" behavior="scroll" onmouseover="stop()" onmouseout="start()" loop="infinite" direction="left">
+                <div class="row">
+                    <ng-container *ngFor="let row of bannerData">
+                        <div class="col-1">
+                            <div class="card">
+                                <img [src]="row.image" width="100" class="img-fluid" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{row.symbol | uppercase}} <span class="text-danger">{{row.market_cap_change_percentage_24h}}%</span></h5>
+                                    <p class="card-text">{{row.current_price | currency: currency}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </marquee>
+        </div>
+    </div>
+</div>
+
+
+<!-- main container -->
+<div class="container">
+    <mat-form-field appearance="standard" class="search">
+        <mat-label style="color: rgb(250, 225, 0);">You can Filter the currency by typing the names....</mat-label>
+        <input style="color: rgb(10, 240, 248);" matInput (keyup)="applyFilter($event)" placeholder="Ex. Btc" #input>
+    </mat-form-field>
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="symbol">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Coin </th>
+                <td class="currencyhover" mat-cell *matCellDef="let row">
+                    <img [src]="row.image" width="50" alt="">
+                    <span class="mx-2">{{row.symbol | uppercase}}</span>
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="current_price">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
+                <td mat-cell *matCellDef="let row"> {{row.current_price | currency:currency}} </td>
+            </ng-container>
+            <ng-container matColumnDef="price_change_percentage_24h">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> 24h Change </th>
+                <td mat-cell *matCellDef="let row"> {{row.price_change_percentage_24h}}% </td>
+            </ng-container>
+            <ng-container matColumnDef="market_cap">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Market Cap </th>
+                <td mat-cell *matCellDef="let row"> {{row.market_cap | currency : currency}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr (click)="gotoDetails(row)" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- bottom navigation bar -->
+<nav class="navbar bottom-navbar centerbottom">
+    <div class="your-new-class">
+      <div class="centered-box">
+        <div class="info">
+          <div class="label">Product License Information:</div>
+          <div class="label">- License Type : Private</div>
+          <span class="label">- Developer : <span class="value">Nishant Maheshwari</span></span>
+          <br>  
+          <span class="label">- Developer's Organization : <span class="value">Lovely Professional University</span></span>
+        </div>
+      </div>
+    </div>
+    <div class="github-link">
+        <a href="https://github.com/geekcoderr">
+          <img src="../../assets/github.png" class="img-x" alt="GitHub Icon" width="40">
+        </a>
+      </div>
+  </nav>
